@@ -219,6 +219,7 @@ padding-top: 8px;
 
 .project__img {
     width: 100%;
+    transition: all 500ms ease;
 }
 
 .project__wrapper {
@@ -240,6 +241,7 @@ padding-top: 8px;
     background-color: #1c1d25;
     opacity: 0;
     transition: opacity 450ms ease;
+    z-index: 2;
 }
 
 .project:hover .project__wrapper:before {
@@ -251,6 +253,31 @@ padding-top: 8px;
     filter: blur(5px);
 }
 
+.project:hover .project__description {
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
 .project__list {
     padding-top: 40px;
+}
+
+.project__description {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(-50%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.project__description--title,
+.project__description--sub-title,
+.project__description--para,
+.project__description--link {
+    text-align: left;
+    color: #fff;
+
 }
